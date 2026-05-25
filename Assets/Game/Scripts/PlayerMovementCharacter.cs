@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovementCharacter : MonoBehaviour
 {
     private Vector3 _movementDirection;
-    private float _moveSpeed = 1f;
+    [SerializeField] private float _moveSpeed = 1f;
     private Vector3 _velocityXZ;
     [SerializeField]
     private CharacterController _characterController;
@@ -25,9 +25,21 @@ public class PlayerMovementCharacter : MonoBehaviour
 
     public void Move()
     {
+        CalculateVelocityXYZ();
+        _characterController.Move(_velocityXZ);
+    }
+
+    void CalculateVelocityXYZ()
+    {
+        Transform cameraTransform = Camera.main.transform;
+        Vector3 xDirection = _movementDirection.x * cameraTransform.right;
+        Vector3 zDirection = _movementDirection.z * cameraTransform.forward;
+        Vector3 direction = xDirection + zDirection;
+        direction.y = 0;
+
         if (_movementDirection.magnitude >= 0.01)
         {
-            _velocityXZ = _movementDirection * _moveSpeed * Time.deltaTime;
+            _velocityXZ = _moveSpeed * direction.normalized * Time.deltaTime;
         }
         else
         {
