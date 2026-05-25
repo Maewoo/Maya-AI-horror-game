@@ -3,12 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using static GameInputAction;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour, IPlayerActions
 {
     private GameInputAction _inputAction;
     public UnityEvent<Vector2> OnMoveInput;
+    public UnityEvent<bool> OnSprintInput; //harus bool karena untuk menampung nilai true atau false ketika tombol ditekan atau dilepas
 
     private void Awake()
     {
@@ -17,6 +19,7 @@ public class InputManager : MonoBehaviour, IPlayerActions
         _inputAction.Player.Enable(); //mengaktifkan action map Player
         _inputAction.Player.SetCallbacks(this);
     }
+    //membuat Event OnMoveInput
     void OnMove(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -30,9 +33,17 @@ public class InputManager : MonoBehaviour, IPlayerActions
         Debug.Log("Interact");
     }
 
-    //membuat Event OnMoveInput
-
-
+    public void OnSprint(InputAction.CallbackContext context)
+    {
+        if (context.performed)//check apakah tombol shift ditekan
+        {
+            OnSprintInput?.Invoke(true); //kalau iya maka true
+        }
+        if (context.canceled)//check apakah tombol shift dilepas
+        {
+            OnSprintInput?.Invoke(false); //kalau iya dilepas maka false
+        }
+    }
 
     void IPlayerActions.OnMove(InputAction.CallbackContext context)
     {
