@@ -77,11 +77,7 @@ public class SightPerception : MonoBehaviour
         // variable _targetLayer.
         // Hasil pengecekan akan dimasukkan ke dalam variable isSeeTarget
         bool isSeeTarget = Physics.Raycast(_eyePosition.position, dirToTarget.normalized, out RaycastHit hit, _viewDistance, _targetLayer);
-        Debug.DrawRay(_eyePosition.position, dirToTarget.normalized * _viewDistance, Color.white);
-        if (hit.collider != null)
-        {
-            Debug.Log("Mata hantu melihat objek: " + hit.transform.name + " di layer: " + LayerMask.LayerToName(hit.transform.gameObject.layer));
-        }
+
         // Jika ada object terlihat
         if (isSeeTarget == true)
         {

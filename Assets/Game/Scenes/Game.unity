@@ -482,6 +482,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &381650085
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 381650087}
+  - component: {fileID: 381650086}
+  m_Layer: 0
+  m_Name: GhostSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &381650086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381650085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32e05a749baf21947ba031c0fbe5c1de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _aiController: {fileID: 1004418460}
+  _minSpawnDelay: 5
+  _maxSpawnDelay: 8
+  _minSpawnDistance: 3
+  _maxSpawnDistance: 5
+--- !u!4 &381650087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381650085}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &511352678
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,6 +920,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6007948482151173437, guid: df81517aab7db5346acfa0b58d1e47cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1004418454}
+    - targetCorrespondingSourceObject: {fileID: 6007948482151173437, guid: df81517aab7db5346acfa0b58d1e47cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1004418460}
   m_SourcePrefab: {fileID: 100100000, guid: df81517aab7db5346acfa0b58d1e47cc, type: 3}
 --- !u!1 &1004418453 stripped
 GameObject:
@@ -952,6 +1004,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6353266243273201543, guid: df81517aab7db5346acfa0b58d1e47cc, type: 3}
   m_PrefabInstance: {fileID: 1004418452}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1004418460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004418453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71be75ff94267e445901aeed1de312a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _behaviorGraphAgent: {fileID: 1004418455}
+  _navMeshAgent: {fileID: 1004418456}
+  _target: {fileID: 1389526392}
+  _sightPerception: {fileID: 1004418454}
+  OnDespawn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 381650086}
+        m_TargetAssemblyTypeName: GhostSpawner, Assembly-CSharp
+        m_MethodName: RestartSpawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1162217763
 GameObject:
   m_ObjectHideFlags: 0
@@ -2502,3 +2585,4 @@ SceneRoots:
   - {fileID: 2007913296}
   - {fileID: 1947464662}
   - {fileID: 1004418452}
+  - {fileID: 381650087}
