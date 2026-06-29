@@ -20,6 +20,9 @@ public class PlayerMovementCharacter : MonoBehaviour
 
     public bool IsSprint => _isSprint; //memberitahu untuk mengakses nilai _isSprint
 
+    // Membuat property untuk menentukan apakah movement sedang aktif
+    public bool Enabled { get; private set; } = true;
+
     void Awake()
     {
         _moveSpeed = _walkSpeed;
@@ -44,10 +47,14 @@ public class PlayerMovementCharacter : MonoBehaviour
 
     public void Move()
     {
-        CalculateVelocityXYZ();
-        CalculateVelocityY();
-        Vector3 velocity = new Vector3(_velocityXZ.x, _velocityY, _velocityXZ.z);
-        _characterController.Move(velocity);
+        if (Enabled == true)
+        {
+            CalculateVelocityXYZ();
+            CalculateVelocityY();
+            Vector3 velocity = new Vector3(_velocityXZ.x, _velocityY, _velocityXZ.z);
+            _characterController.Move(velocity);
+
+        }
     }
     private void CalculateAcceleration()
     {
@@ -102,5 +109,10 @@ public class PlayerMovementCharacter : MonoBehaviour
         {
             _velocityY = -2f;
         }
+    }
+
+    public void SetEnabled(bool isEnabled)
+    {
+        Enabled = isEnabled;
     }
 }

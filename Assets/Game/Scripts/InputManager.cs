@@ -11,6 +11,9 @@ public class InputManager : MonoBehaviour, IPlayerActions
     private GameInputAction _inputAction;
     public UnityEvent<Vector2> OnMoveInput;
     public UnityEvent<bool> OnSprintInput; //harus bool karena untuk menampung nilai true atau false ketika tombol ditekan atau dilepas
+    public UnityEvent OnInteractInput;
+    // Membuat event OnFlashlightInput
+    public UnityEvent OnFlashlightInput;
 
     private void Awake()
     {
@@ -52,6 +55,21 @@ public class InputManager : MonoBehaviour, IPlayerActions
 
     void IPlayerActions.OnInteract(InputAction.CallbackContext context)
     {
-        OnInteract(context);
+        // contect.performed digunakan untuk mengecek apakah input ditekan
+        if (context.performed)
+        {
+            // Jika input ditekan maka trigger event OnInteractInput
+            OnInteractInput?.Invoke();
+        }
+    }
+
+    public void OnFlashlight(InputAction.CallbackContext context)
+    {
+        // contect.performed digunakan untuk mengecek apakah input ditekan
+        if (context.performed)
+        {
+            // Jika input ditekan maka trigger event OnFlashlightInput
+            OnFlashlightInput?.Invoke();
+        }
     }
 }
