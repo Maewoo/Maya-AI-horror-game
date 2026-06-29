@@ -963,6 +963,8 @@ MonoBehaviour:
   m_Graph: {fileID: -5274407571886083874, guid: 2c7228fafa9a4194a9a41961b3b5190c, type: 2}
   m_BlackboardVariableOverridesList:
   - rid: 8510234952414265628
+  - rid: 8510234957186597760
+  - rid: 8510234957186597761
   m_OriginalGraph: {fileID: 0}
   m_IsInitialised: 0
   m_IsStarted: 0
@@ -977,6 +979,22 @@ MonoBehaviour:
           m_Value1: 0
         Name: Self
         m_Value: {fileID: 1004418453}
+    - rid: 8510234957186597760
+      type: {class: 'BlackboardVariable`1[[GhostAIController, Assembly-CSharp]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 5765797277198514977
+          m_Value1: 16400867797578972745
+        Name: AIController
+        m_Value: {fileID: 1004418460}
+    - rid: 8510234957186597761
+      type: {class: 'BlackboardVariable`1[[UnityEngine.Transform, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 11679316030127331721
+          m_Value1: 2245141071769530981
+        Name: Target
+        m_Value: {fileID: 1389526388}
 --- !u!195 &1004418456
 NavMeshAgent:
   m_ObjectHideFlags: 0
