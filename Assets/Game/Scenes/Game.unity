@@ -143,6 +143,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Master Wardrobe
       objectReference: {fileID: 0}
+    - target: {fileID: 8190606819638277481, guid: 83b35f09eb62f6b4aa05fc23b95649a1, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8854412412298604499, guid: 83b35f09eb62f6b4aa05fc23b95649a1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.95669514
@@ -193,6 +197,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 905232818}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8190606819638277481, guid: 83b35f09eb62f6b4aa05fc23b95649a1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 256868287}
     - targetCorrespondingSourceObject: {fileID: 7882418167642954453, guid: 83b35f09eb62f6b4aa05fc23b95649a1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1525209839}
@@ -373,6 +380,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8854412412298604499, guid: 83b35f09eb62f6b4aa05fc23b95649a1, type: 3}
   m_PrefabInstance: {fileID: 19670724}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &256868286 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8190606819638277481, guid: 83b35f09eb62f6b4aa05fc23b95649a1, type: 3}
+  m_PrefabInstance: {fileID: 19670724}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &256868287
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256868286}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2.8275197, z: 1.8026005}
+  m_Center: {x: 5.737869e-16, y: 0.9137598, z: -0.20962328}
 --- !u!1 &270398827
 GameObject:
   m_ObjectHideFlags: 0
@@ -2072,15 +2105,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5234149226918167881, guid: e3b1cd1f1720fe54d8177f808ded89f7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.658
+      value: 2.180548
       objectReference: {fileID: 0}
     - target: {fileID: 5234149226918167881, guid: e3b1cd1f1720fe54d8177f808ded89f7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.689
+      value: 0.782
       objectReference: {fileID: 0}
     - target: {fileID: 5234149226918167881, guid: e3b1cd1f1720fe54d8177f808ded89f7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.61
+      value: -0.86
       objectReference: {fileID: 0}
     - target: {fileID: 5234149226918167881, guid: e3b1cd1f1720fe54d8177f808ded89f7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2195,6 +2228,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door_11_Venge
       objectReference: {fileID: 0}
+    - target: {fileID: 1621344227884394, guid: 8c19d848722b9234b87ea8f9fe2910aa, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4894436672217640, guid: 8c19d848722b9234b87ea8f9fe2910aa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.2593942
@@ -2205,7 +2242,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4894436672217640, guid: 8c19d848722b9234b87ea8f9fe2910aa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.23
+      value: -1.31
       objectReference: {fileID: 0}
     - target: {fileID: 4894436672217640, guid: 8c19d848722b9234b87ea8f9fe2910aa, type: 3}
       propertyPath: m_LocalRotation.w
